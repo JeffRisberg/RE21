@@ -3,7 +3,6 @@ import PATH from 'path';
 import express from 'express';
 import nconf from 'nconf';
 
-
 import baseManager from './base-manager';
 
 const ROOT = '../';
@@ -19,6 +18,7 @@ const assetsManager = Object.assign({}, baseManager, {
             }));
         });  
     },
+
     adjustStaticFolders(folders, root) {
         const adjustedFolders = folders.map(function(folder) {
             return PATH.resolve(__dirname, ROOT, folder);

@@ -60,7 +60,7 @@ export default class LatestBills extends React.Component {
         return (
             <section className="latest-bills">
                 <header className="section-header">
-                    <h3 className="title">Latest Bills</h3>
+                    <h3 className="title">Latest Donations</h3>
                 </header>
                 <section className="section-content">
                     <List items={this.state.items} itemType={CompactBill}/>

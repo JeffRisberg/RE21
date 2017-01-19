@@ -19,8 +19,8 @@ const DetailedBillConnector = ComponentConnectorFactory.connect({
     store: DetailedBillStore
 });
 
-const LatestsBillsConnector = ComponentConnectorFactory.connect({
-    name: 'LatestsBillsConnector',
+const LatestBillsConnector = ComponentConnectorFactory.connect({
+    name: 'LatestBillsConnector',
     component: LatestBills,
     store: LatestBillsStore
 });
@@ -28,7 +28,7 @@ const LatestsBillsConnector = ComponentConnectorFactory.connect({
 export default (
     <Route path="/" component={App}>
         <Route component={Dashboard}>
-            <IndexRoute component={LatestsBillsConnector}/>
+            <IndexRoute component={LatestBillsConnector}/>
             <Route path="bill/:id" component={DetailedBillConnector}/>
         </Route>
         <Route path="*" component={NoMatch}/>

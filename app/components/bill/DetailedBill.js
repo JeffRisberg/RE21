@@ -46,7 +46,7 @@ export default class DetailedBill extends React.Component {
         return (
             <section className="latest-bills">
                 <header className="section-header">
-                    <h3 className="title">Bill Details</h3>
+                    <h3 className="title">Donation Details</h3>
                     <Link className="link" to={this.context.root}>&#171; Home</Link>
                 </header>
                 <section className="section-content">
