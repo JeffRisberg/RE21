@@ -28,8 +28,8 @@ const LatestBillsConnector = ComponentConnectorFactory.connect({
 export default (
     <Route path="/" component={App}>
         <Route component={Dashboard}>
-            <IndexRoute component={LatestBillsConnector}/>
-            <Route path="bill/:id" component={DetailedBillConnector}/>
+            <IndexRoute component={LatestDonationsConnector}/>
+            <Route path="bill/:id" component={DetailedDonationConnector}/>
         </Route>
         <Route path="*" component={NoMatch}/>
     </Route>

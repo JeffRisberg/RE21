@@ -111,13 +111,13 @@ const routeManager = Object.assign({}, baseManager, {
     },
 
     retrieveLatestBills(callback) {
-        FS.readFile('./app/fixtures/latest-bills.json', 'utf-8', (err, content) => {
+        FS.readFile('./app/fixtures/latest-donations.json', 'utf-8', (err, content) => {
             callback(err, JSON.parse(content));
         });
     },
 
     retrieveDetailedBills(callback) {
-        FS.readFile('./app/fixtures/detailed-bills.json', 'utf-8', (err, content) => {
+        FS.readFile('./app/fixtures/detailed-donations.json', 'utf-8', (err, content) => {
             callback(err, JSON.parse(content));
         });
     }

@@ -1,11 +1,11 @@
 import React from 'react';
 
 import List from '../common/List';
-import CompactBill from './CompactBill';
+import CompactDonation from './CompactDonation';
 
 import Actions from '../../actions/Actions';
 
-export default class LatestBills extends React.Component {
+export default class DonationList extends React.Component {
     static loadAction(params, domain) {
         return Actions.loadLatestBillsData(params, domain);
     }

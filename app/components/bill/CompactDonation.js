@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router';
 
-export default class CompactBill extends React.Component {
+export default class CompactDonation extends React.Component {
     render() {
         const data = this.props.data;
         const amount = `$${data.amount}`;
@@ -23,6 +23,6 @@ export default class CompactBill extends React.Component {
     }
 
     calculateLink(data) {
-        return `/bill/${data.id}`;
+        return `/donation/${data.id}`;
     }
 }

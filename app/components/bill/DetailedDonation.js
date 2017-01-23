@@ -4,7 +4,7 @@ import {Link} from 'react-router';
 
 import Actions from '../../actions/Actions';
 
-export default class DetailedBill extends React.Component {
+export default class DetailedDonation extends React.Component {
     static loadAction(params, domain) {
         return Actions.loadDetailedBillData(params, domain);
     }
