@@ -108,11 +108,43 @@ const routeManager = Object.assign({}, baseManager, {
             });
         });
 
+        router.get('/charity/:id', (req, res) => {
+            const id = req.params.id;
+
+            this.retrieveCharities((err, data) => {
+                if(!err) {
+                    const charityData = data.items.filter((item) => {
+                        return item.id === id;
+                    })[0];
+
+                    res.json(charityData);
+                } else {
+                    res.status(500).send(err);
+                }
+            });
+        });
+
+        router.get('/charities', (req, res) => {
+            this.retrieveCharities((err, data) => {
+                if(!err) {
+                    res.json(data);
+                } else {
+                    res.status(500).send(err);
+                }
+            });
+        });
+
         return router;
     },
 
     retrieveDonations(callback) {
         FS.readFile('./app/fixtures/donations.json', 'utf-8', (err, content) => {
+            callback(err, JSON.parse(content));
+        });
+    },
+
+    retrieveCharities(callback) {
+        FS.readFile('./app/fixtures/charities.json', 'utf-8', (err, content) => {
             callback(err, JSON.parse(content));
         });
     }
