@@ -1,24 +1,24 @@
 import BaseStore from './BaseStore';
 import Consts from '../actions/Consts';
 
-let detailedDonationData = {};
+let latestDonationsData = {};
 
-export default class DetailedDonationStore extends BaseStore {
+export default class LatestDonationStore extends BaseStore {
     resetAll() {
-        detailedDonationData = {};
+        latestDonationsData = {};
     }
 
     setAll(data) {
-        detailedDonationData = data;
+        latestDonationsData = data;
     }
 
     getAll() {
-        return detailedDonationData;
+        return latestDonationsData;
     }
 
     handleAction(action) {
         switch (action.type) {
-        case Consts.LOAD_DETAILED_Donation:
+        case Consts.LOAD_LATEST_DONATIONS:
             this.setAll(action.data);
             this.emitChange();
             break;

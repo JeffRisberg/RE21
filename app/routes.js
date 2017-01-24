@@ -5,31 +5,31 @@ import App from './components/app';
 import NoMatch from './components/common/NoMatch';
 
 import Dashboard from './components/dashboard/Dashboard';
-import LatestBills from './components/bill/LatestBills';
-import DetailedBill from './components/bill/DetailedBill';
+import LatestDonations from './components/donation/LatestDonations';
+import DetailedDonation from './components/donation/DetailedDonation';
 
-import DetailedBillStore from './stores/DetailedBillStore';
-import LatestBillsStore from './stores/LatestBillsStore';
+import DetailedDonationStore from './stores/DetailedDonationStore';
+import LatestDonationsStore from './stores/LatestDonationsStore';
 
 import ComponentConnectorFactory from './components/common/ComponentConnectorFactory';
 
-const DetailedBillConnector = ComponentConnectorFactory.connect({
-    name: 'DetailedBillConnector',
-    component: DetailedBill,
-    store: DetailedBillStore
+const DetailedDonationConnector = ComponentConnectorFactory.connect({
+    name: 'DetailedDonationConnector',
+    component: DetailedDonation,
+    store: DetailedDonationStore
 });
 
-const LatestBillsConnector = ComponentConnectorFactory.connect({
-    name: 'LatestBillsConnector',
-    component: LatestBills,
-    store: LatestBillsStore
+const LatestDonationsConnector = ComponentConnectorFactory.connect({
+    name: 'LatestDonationsConnector',
+    component: LatestDonations,
+    store: LatestDonationsStore
 });
 
 export default (
     <Route path="/" component={App}>
         <Route component={Dashboard}>
             <IndexRoute component={LatestDonationsConnector}/>
-            <Route path="bill/:id" component={DetailedDonationConnector}/>
+            <Route path="donation/:id" component={DetailedDonationConnector}/>
         </Route>
         <Route path="*" component={NoMatch}/>
     </Route>

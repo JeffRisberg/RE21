@@ -5,9 +5,9 @@ import CompactDonation from './CompactDonation';
 
 import Actions from '../../actions/Actions';
 
-export default class DonationList extends React.Component {
+export default class LatestDonations extends React.Component {
     static loadAction(params, domain) {
-        return Actions.loadLatestBillsData(params, domain);
+        return Actions.loadLatestDonationsData(params, domain);
     }
 
     constructor(props) {
@@ -27,7 +27,7 @@ export default class DonationList extends React.Component {
     }
 
     componentDidMount() {
-        Actions.getLatestBillsData(this.props.params);
+        Actions.getLatestDonationsData(this.props.params);
     }
 
     shouldComponentUpdate(nextProps, nextState) {
@@ -58,12 +58,12 @@ export default class DonationList extends React.Component {
 
     render() {
         return (
-            <section className="latest-bills">
+            <section className="latest-donations">
                 <header className="section-header">
                     <h3 className="title">Latest Donations</h3>
                 </header>
                 <section className="section-content">
-                    <List items={this.state.items} itemType={CompactBill}/>
+                    <List items={this.state.items} itemType={CompactDonation}/>
                 </section>
             </section>
         );

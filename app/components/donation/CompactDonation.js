@@ -8,7 +8,7 @@ export default class CompactDonation extends React.Component {
         const link = this.calculateLink(data);
 
         return (
-            <div className="bill compact-bill">
+            <div className="donation compact-donation">
                 <img className="icon" src={data.icon}/>
                 <div className="info-container">
                     <h4 className="title">{data.vendor}</h4>

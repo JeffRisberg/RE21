@@ -4,15 +4,15 @@ import AppDispatcher from '../dispatcher/AppDispatcher';
 import Consts from './Consts';
 
 export class Actions {
-    loadDetailedBillData(params, domain = '') {
-        const url = `${domain}/api/bill/${params.id}`;
+    loadDetailedDonationData(params, domain = '') {
+        const url = `${domain}/api/donation/${params.id}`;
         return axios.get(url);
     }
 
-    getDetailedBillData(params) {
-        this.loadDetailedBillData(params).then((response) => {
+    getDetailedDonationData(params) {
+        this.loadDetailedDonationData(params).then((response) => {
             AppDispatcher.dispatch({
-                type: Consts.LOAD_DETAILED_BILL, 
+                type: Consts.LOAD_DETAILED_DONATION,
                 data: response.data
             });
         }).catch((err) => {
@@ -20,15 +20,15 @@ export class Actions {
         });
     }
 
-    loadLatestBillsData(params, domain = '') {
-        const url = `${domain}/api/latest-bills`;
+    loadLatestDonationsData(params, domain = '') {
+        const url = `${domain}/api/latest-donations`;
         return axios.get(url);
     }
 
-    getLatestBillsData(params) {
-        this.loadLatestBillsData(params).then((response) => {
+    getLatestDonationsData(params) {
+        this.loadLatestDonationsData(params).then((response) => {
             AppDispatcher.dispatch({
-                type: Consts.LOAD_LATEST_BILLS, 
+                type: Consts.LOAD_LATEST_DONATIONS,
                 data: response.data
             });
         }).catch((err) => {

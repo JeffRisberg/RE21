@@ -6,7 +6,7 @@ import Actions from '../../actions/Actions';
 
 export default class DetailedDonation extends React.Component {
     static loadAction(params, domain) {
-        return Actions.loadDetailedBillData(params, domain);
+        return Actions.loadDetailedDonationData(params, domain);
     }
 
     static get contextTypes() {
@@ -32,7 +32,7 @@ export default class DetailedDonation extends React.Component {
     }
 
     componentDidMount() {
-        Actions.getDetailedBillData(this.props.params);
+        Actions.getDetailedDonationData(this.props.params);
     }
 
     onChange() {
@@ -40,17 +40,18 @@ export default class DetailedDonation extends React.Component {
         this.setState(state);
     }
 
-    render() {        
+    render() {
+        console.log(this.state);
         const amount = `$${this.state.amount}`;
 
         return (
-            <section className="latest-bills">
+            <section className="latest-donations">
                 <header className="section-header">
                     <h3 className="title">Donation Details</h3>
                     <Link className="link" to={this.context.root}>&#171; Home</Link>
                 </header>
                 <section className="section-content">
-                    <div className="bill detailed-bill">
+                    <div className="donation detailed-donation">
                         <img className="icon" src={this.state.icon}/>
                         <div className="info-container">
                             <h4 className="title">{this.state.vendor}</h4>
