@@ -20,15 +20,15 @@ export class Actions {
         });
     }
 
-    loadLatestDonationsData(params, domain = '') {
-        const url = `${domain}/api/latest-donations`;
+    loadDonationsData(params, domain = '') {
+        const url = `${domain}/api/donations`;
         return axios.get(url);
     }
 
-    getLatestDonationsData(params) {
-        this.loadLatestDonationsData(params).then((response) => {
+    getDonationsData(params) {
+        this.loadDonationsData(params).then((response) => {
             AppDispatcher.dispatch({
-                type: Consts.LOAD_LATEST_DONATIONS,
+                type: Consts.LOAD_DONATIONS,
                 data: response.data
             });
         }).catch((err) => {

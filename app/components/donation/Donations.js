@@ -5,9 +5,9 @@ import CompactDonation from './CompactDonation';
 
 import Actions from '../../actions/Actions';
 
-export default class LatestDonations extends React.Component {
+export default class Donations extends React.Component {
     static loadAction(params, domain) {
-        return Actions.loadLatestDonationsData(params, domain);
+        return Actions.loadDonationsData(params, domain);
     }
 
     constructor(props) {

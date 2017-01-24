@@ -82,20 +82,10 @@ const routeManager = Object.assign({}, baseManager, {
     createApiRouter(app) {
         const router = express.Router();
 
-        router.get('/latest-donations', (req, res) => {
-            this.retrieveLatestDonations((err, data) => {
-                if(!err) {
-                    res.json(data);
-                } else {
-                    res.status(500).send(err);
-                }
-            });
-        });
-
         router.get('/donation/:id', (req, res) => {
             const id = req.params.id;
 
-            this.retrieveDetailedDonations((err, data) => {
+            this.retrieveDonations((err, data) => {
                 if(!err) {
                     const donationData = data.items.filter((item) => {
                         return item.id === id;
@@ -107,17 +97,22 @@ const routeManager = Object.assign({}, baseManager, {
                 }
             });
         });
+
+        router.get('/donations', (req, res) => {
+            this.retrieveDonations((err, data) => {
+                if(!err) {
+                    res.json(data);
+                } else {
+                    res.status(500).send(err);
+                }
+            });
+        });
+
         return router;
     },
 
-    retrieveLatestDonations(callback) {
-        FS.readFile('./app/fixtures/latest-donations.json', 'utf-8', (err, content) => {
-            callback(err, JSON.parse(content));
-        });
-    },
-
-    retrieveDetailedDonations(callback) {
-        FS.readFile('./app/fixtures/detailed-donations.json', 'utf-8', (err, content) => {
+    retrieveDonations(callback) {
+        FS.readFile('./app/fixtures/donations.json', 'utf-8', (err, content) => {
             callback(err, JSON.parse(content));
         });
     }
