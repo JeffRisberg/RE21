@@ -1,19 +1,23 @@
 import React from 'react';
-import {IndexLink} from 'react-router';
+
+import NavLink from '../common/NavLink';
 
 export default class Header extends React.Component {
     static get contextTypes() {
         return {
-            root: React.PropTypes.string            
+            root: React.PropTypes.string
         };
     }
 
     render() {
         return (
-            <header className="app-header">
-                <h1 className="title">
-                    <IndexLink to={this.context.root}>App</IndexLink>
-                </h1>
+            <header>
+                <NavLink to="/">RE21</NavLink>
+
+                <ul>
+                    <li><NavLink to="/charities">Charities</NavLink></li>
+                    <li><NavLink to="/donations">Donations</NavLink></li>
+                </ul>
             </header>
         );
     }

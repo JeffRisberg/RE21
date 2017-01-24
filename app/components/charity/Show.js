@@ -32,7 +32,7 @@ export default class CharityShow extends React.Component {
     }
 
     componentDidMount() {
-        Actions.getDetailedDonationData(this.props.params);
+        Actions.getDetailedCharityData(this.props.params);
     }
 
     onChange() {
@@ -41,8 +41,6 @@ export default class CharityShow extends React.Component {
     }
 
     render() {
-        console.log(this.state);
-
         return (
             <section className="charities">
                 <header className="section-header">

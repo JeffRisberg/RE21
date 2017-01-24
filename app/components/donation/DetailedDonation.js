@@ -41,7 +41,6 @@ export default class DetailedDonation extends React.Component {
     }
 
     render() {
-        console.log(this.state);
         const amount = `$${this.state.amount}`;
 
         return (
@@ -54,7 +53,7 @@ export default class DetailedDonation extends React.Component {
                     <div className="donation detailed-donation">
                         <img className="icon" src={this.state.icon}/>
                         <div className="info-container">
-                            <h4 className="title">{this.state.vendor}</h4>
+                            <h4 className="title">{this.state.charity}</h4>
                             <span className="period">{this.state.period}</span>
                             <hr/>
                             <span>

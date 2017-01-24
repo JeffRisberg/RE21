@@ -27,7 +27,7 @@ export default class Donations extends React.Component {
     }
 
     componentDidMount() {
-        Actions.getLatestDonationsData(this.props.params);
+        Actions.getDonationsData(this.props.params);
     }
 
     shouldComponentUpdate(nextProps, nextState) {
@@ -60,7 +60,7 @@ export default class Donations extends React.Component {
         return (
             <section className="latest-donations">
                 <header className="section-header">
-                    <h3 className="title">Latest Donations</h3>
+                    <h3 className="title">Donations</h3>
                 </header>
                 <section className="section-content">
                     <List items={this.state.items} itemType={CompactDonation}/>

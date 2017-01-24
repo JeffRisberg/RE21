@@ -20,6 +20,6 @@ export default class CharityListItem extends React.Component {
     }
 
     calculateLink(data) {
-        return `/charity/${data.id}`;
+        return `/charities/${data.id}`;
     }
 }

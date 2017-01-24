@@ -11,7 +11,7 @@ export default class CompactDonation extends React.Component {
             <div className="donation compact-donation">
                 <img className="icon" src={data.icon}/>
                 <div className="info-container">
-                    <h4 className="title">{data.vendor}</h4>
+                    <h4 className="title">{data.charity}</h4>
                     <span className="period">{data.period}</span>
                     <Link className="link" to={link}>
                         More Details &#187;
@@ -23,6 +23,6 @@ export default class CompactDonation extends React.Component {
     }
 
     calculateLink(data) {
-        return `/donation/${data.id}`;
+        return `/donations/${data.id}`;
     }
 }

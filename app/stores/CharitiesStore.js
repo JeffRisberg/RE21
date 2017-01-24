@@ -18,11 +18,15 @@ export default class CharitiesStore extends BaseStore {
 
     handleAction(action) {
         switch (action.type) {
-        case Consts.LOAD_CHARITIES:
-            this.setAll(action.data);
-            this.emitChange();
-            break;
-        default:
+            case Consts.LOAD_CHARITIES:
+                this.setAll(action.data);
+                this.emitChange();
+                break;
+            case Consts.LOAD_DETAILED_CHARITY:
+                this.setAll(action.data);
+                this.emitChange();
+                break;
+            default:
         }
     }
 }

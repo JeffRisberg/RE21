@@ -27,7 +27,7 @@ export default class CharityList extends React.Component {
     }
 
     componentDidMount() {
-        Actions.getLatestDonationsData(this.props.params);
+        Actions.getCharitiesData(this.props.params);
     }
 
     shouldComponentUpdate(nextProps, nextState) {
